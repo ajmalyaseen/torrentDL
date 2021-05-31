@@ -27,7 +27,7 @@ async def get_torrent_buttons(m: Message, status: Message):
     if torrents is None or len(torrents) == 0:
         await status.edit("No results found")
         return None
-    half_torrent = torrents[:8]
+    half_torrent = torrents[:10]
     keyboard = []
     torrent_list = []
     for torrent in half_torrent:
