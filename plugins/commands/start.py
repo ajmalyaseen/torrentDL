@@ -115,21 +115,3 @@ async def button(bot, cmd: CallbackQuery):
     elif "close_data" in cb_data:
           await cmd.message.delete()
           await cmd.message.reply_to_message.delete()
-
-    
-          else:
-             await cmd.message.edit(
-                  text=Translation.NOT_ADMIN_TEXT,
-                  parse_mode="html", 
-                  disable_web_page_preview=True, 
-                  reply_markup=InlineKeyboardMarkup(
-                      [
-                          [
-                           InlineKeyboardButton("⬇️ BACK", callback_data="back_data"),
-                           InlineKeyboardButton("🔐 CLOSE", callback_data="close_data")
-                          ]
- 
-                      ] 
-                  ) 
-             )
- 
