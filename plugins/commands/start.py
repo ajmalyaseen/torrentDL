@@ -1,8 +1,5 @@
 import pyrogram
 from pyrogram import filters
-from bot import autocaption
-from config import Config
-from database.database import *
 from translation import Translation
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
  
@@ -13,9 +10,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQ
 
 start_button=InlineKeyboardMarkup(
         [
-              [
-                  InlineKeyboardButton("📄 BOT STATUS", callback_data = "status_data")
-              ], 
+               
               [
                   InlineKeyboardButton("📫 UPDATES", url = "https://t.me/Ts_bots"), 
                   InlineKeyboardButton("📕 ABOUT", callback_data = "about_data")
@@ -31,9 +26,6 @@ start_button=InlineKeyboardMarkup(
 
 help_button=InlineKeyboardMarkup(
         [
-              [
-                InlineKeyboardButton("ABOUT MARKDOWN", callback_data = "markdown_data")
-              ], 
               [
                   InlineKeyboardButton("⬇️ BACK", callback_data = "back_data"), 
                   InlineKeyboardButton("🔐 CLOSE", callback_data = "close_data")
@@ -134,9 +126,7 @@ async def button(bot, cmd: CallbackQuery):
                disable_web_page_preview=True, 
                reply_markup=InlineKeyboardMarkup(
                    [
-                       [
-                        InlineKeyboardButton("ABOUT MARKDOWN", callback_data = "markdown_data")
-                       ],
+                     
                        [
                         InlineKeyboardButton("⬇️ BACK", callback_data="back_data"),
                         InlineKeyboardButton("🔐 CLOSE", callback_data="close_data")
@@ -153,9 +143,6 @@ async def button(bot, cmd: CallbackQuery):
                reply_markup=InlineKeyboardMarkup(
                    [
                       
-                       [
-                        InlineKeyboardButton("📄 BOT STATUS", callback_data = "status_data")
-                       ], 
                        [
                         InlineKeyboardButton("📫 UPDATES", url="https://t.me/ts_bots"),
                         InlineKeyboardButton("📕 ABOUT ME", callback_data="about_data")
