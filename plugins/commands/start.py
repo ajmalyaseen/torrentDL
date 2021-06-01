@@ -34,8 +34,8 @@ about_button=InlineKeyboardMarkup(
 ) 
 
 
-@autocaption.on_message(filters.command("start") & filters.private)
-async def start(bot, cmd):
+@Client.on_message(filters.command(["start", "start@GroupMusicPlayBot"]) & filters.private & ~filters.channel)
+async def start(_, message: Message):
       await bot.send_message(
           chat_id = cmd.chat.id,
           text = Translation.START_TEXT.format(cmd.from_user.first_name, Config.ADMIN_USERNAME), 
